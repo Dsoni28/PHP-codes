@@ -7,10 +7,10 @@ function insertPost($connectdata)
   // If upload button is clicked
   if (isset($_POST['submit'])) {
   
-    $filename = $_FILES["my_image"]["name"];
-    $username = $_SESSION["username"];
+    $filename = $_FILES["my_image"]["name"];  //image file
+    $username = $_SESSION["username"];   //active session username
     $tempname = $_FILES["my_image"]["tmp_name"];    
-    $content = htmlentities($_POST['text']);
+    $content = htmlentities($_POST['text']);  //text content added by user 
         $folder = './';
         move_uploaded_file($tempname, $folder.$filename);
   

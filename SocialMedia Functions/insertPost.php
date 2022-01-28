@@ -1,10 +1,10 @@
 <?php
 function insertPost($connectdata)
 {
-	include "account.php";
+  include "account.php";
   $msg = "";
   
-  // If upload button is clicked ...
+  // If upload button is clicked
   if (isset($_POST['submit'])) {
   
     $filename = $_FILES["my_image"]["name"];
@@ -15,7 +15,7 @@ function insertPost($connectdata)
         move_uploaded_file($tempname, $folder.$filename);
   
         // insert all the submitted data from the form
-        $sql = "INSERT INTO imagescs490 (username, img_url, text, time) VALUES ('$username', '$filename', '$content', NOW())";
+        $sql = "INSERT INTO *DATABSENAME* (username, img_url, text, time) VALUES ('$username', '$filename', '$content', NOW())";
   
         // Execute query
         mysqli_query($connectdata, $sql);
